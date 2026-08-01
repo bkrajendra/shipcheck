@@ -1,0 +1,23 @@
+{
+  "name": "shipcheck",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ShipCheck — a Flue agent that investigates whether a codebase is ready to ship.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "shipcheck": "flue run src/agents/ship-check.ts"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "@flue/runtime": "^2.0.0",
+    "valibot": "^1.1.0"
+  },
+  "devDependencies": {
+    "@flue/cli": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^7.0.2"
+  }
+}
