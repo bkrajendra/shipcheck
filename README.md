@@ -20,6 +20,9 @@ cp .env.example .env
 
 Requires Node.js ≥ 22.19 (see `.node-version` / `engines` in `package.json`).
 
+> [!WARNING]
+> **Always run `npm install` before your first `npx flue` command, in this exact folder.** The Flue CLI binary is provided by `@flue/cli`, and `npx` only finds it once `npm install` has linked it into `node_modules/.bin/flue`. If you run `npx flue ...` in a folder where dependencies were never installed, `npx` will *not* error — it will offer to install and run a completely unrelated, years-old npm package that also happens to be named `flue` (a Firebase/Elasticsearch sync daemon). You'll know this happened if you see prompts about `firebaseUrl`, `elasticsearchUrl`, or `EBADENGINE` warnings for `node: '0.10.x'` — that is not this project running; it means `npm install` was skipped (or run in a different directory than the one you're invoking `npx flue` from).
+
 ## How to run it against a repo
 
 ```bash
